@@ -9,17 +9,16 @@
         <h1><a href="/">Tyler's Django Blog</a> </h1>
     </div>
 
-    <div class="blog1">
-        <p>published: 04.06.2019, 2:35</p>
-        <h2><a href="">My first post</a></h2>
-        <p>SUPPPPPPPPPPPPPPPPPPP</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a> </h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
-    <div class="blog2">
-        <p>published: 04.06.2019, 2:36</p>
-        <h2><a href="">My second post</a></h2>
-        <p>YOOOOOOOOOOo</p>
-    </div>
+
+
 
 </body>
 </html>
